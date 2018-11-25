@@ -3,44 +3,63 @@
   <head>
     <meta charset="utf-8">
     <title>myPlastics</title>
-
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
   <body>
-    <form action="/myPlastics/" method="POST">
-      <label for="userName">Name: </label>
-      <input type="text" name="userName" placeholder="Your Name" /><br/>
+    <main>
 
-      <label for="plastic_bottles">Plastic Bottles: </label><br/>
-      <input type="number" name="plastic_bottles" /><br/>
+      <div class="top">
+        <div class="nav">
+          <div class="title">
+            myPlastics
+          </div>
+          <div class="navLinks">
+            <div class="link">
+              Individual
+            </div>
+            <div class="link">
+              Community
+            </div>
+            <div class="link">
+              Solutions
+            </div>
+          </div>
+        </div>
+        <div id="problem">
+          <span id="text">As inhabitants of Earth, we have a very urgent problem that desperately needs our attention. </span>
+          <a href="#" id="button">Learn More</a>
+        </div>
 
-      <label for="plastic_cups">Plastic Cups: </label><br/>
-      <input type="number" name="plastic_cups" /><br/>
+      </div>
+      <div class="second">
+        <div class="inner">
+            <div id="legos">
+              <div>Around the year 1950, plastic became popular. This exciting new material was durable and cheaply made, allowing its use to become wide-spread.</div>
+            </div>
+            <!-- <img src="/images/legos-iker-urteaga.jpeg" alt="Image courtesy of rawpixel at unsplash.com"> -->
+        </div>
 
-      <label for="straws">Straws: </label><br/>
-      <input type="number" name="straws" /><br/>
+        <div class="inner">
+          <div id="store">
+            <div>Now, the most common use for plastic is single-use packaging.  </div>
+          </div>
 
-      <label for="resealable_plastic_bags">Resealable Plastic Bags: </label><br/>
-      <input type="number" name="resealable_plastic_bags" /><br/>
+        </div>
 
-      <label for="cling_wrap">Cling Wrap: </label><br/>
-      <input type="number" name="cling_wrap" /><br/>
+        <div class="inner">
+          <div id="fish">
+            <div>Plastic is filling up our oceans and our natural environment. It is estimated that by the year 2050, there will be more plastic in our ocean than fish.</div>
+          </div>
 
-      <label for="cutlery">Plastic Cutlery: </label><br/>
-      <input type="number" name="cutlery" /><br/>
+        </div>
+      </div>
 
-      <label for="stirrers">Stirrers: </label><br/>
-      <input type="number" name="stirrers" /><br/>
-
-      <label for="takeout_food_containers">Takeout Food Containers: </label><br/>
-      <input type="text" name="takeout_food_containers" /><br/>
-
-      <label for="grocery_bags">Plastic Grocery Bags: </label><br/>
-      <input type="text" name="grocery_bags" /><br/>
-
-      <input type="submit" value="Submit" />
-    </form>
-
-
-
+      <div class="third">
+        <div class="topTen">
+          
+        </div>
+      </div>
+    </main>
   </body>
 </html>

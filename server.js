@@ -2,22 +2,21 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
 const Plastics = require('./models/plastics.js')
+const topTen = require('./models/data.js')
 
 const db = mongoose.connection
-
 const PORT = 3000
+
 
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:true}))
-
-
-const usersPlastics = [];
 
 // index page
 app.get('/myPlastics', (req, res)=>{
   Plastics.find({}, (error, allPlastics)=>{
     res.render('index.ejs', {
-      plastics: allPlastics
+      plastics: allPlastics,
+      topTen: 
     })
   })
 
@@ -26,14 +25,18 @@ app.get('/myPlastics', (req, res)=>{
 // create new user plastics data
 app.post('/myPlastics', (req, res)=>{
   Plastics.create(req.body, (error, createdPlastics)=>{
-    console.log(req.body);
-    usersPlastics.push(req.body);
     res.redirect('/myPlastics')
   })
 })
 
 // render new user plastics data in a chart
-
+app.get('/myPlastics/:id', (req, res)=>{
+  Plastics.findById(req.params.id, (err, foundPlastics)=>{
+    res.render('results.ejs', {
+      plastics: foundPlastics
+    })
+  })
+})
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));

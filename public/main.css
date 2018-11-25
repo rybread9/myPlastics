@@ -1,1 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:300');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
+body {
+font-family: 'Bai Jamjuree', sans-serif;  font-weight: 100;
+background-color: rgb(16, 77, 107);
+color: white
+}
+
+.top {
+  background-image: url("/images/ocean-top-matt-hardy.jpeg");
+  /* background-color: rgb(46, 50, 103); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  color: ghostwhite;
+  font-family: sans-serif;
+  font-size: 26px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid rgb(16, 77, 107);
+  font-family: 'Shadows Into Light', cursive;
+  letter-spacing: 4px;
+  color: rgb(16, 77, 107);
+  height: 110px;
+}
+.navLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.link {
+  margin-left: 30px;
+  margin-right: 30px;
+  font-weight: 100;
+}
+.title {
+  font-size: 48px;
+  margin-left: 20px;
+}
+#problem {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-top: 450px;
+  text-align: center;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+#text {
+  margin-bottom: 30px;
+
+}
+#button {
+  color: white;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+  background-color: rgba(27, 40, 107, 0.43);
+  border: 1px solid rgba(128, 202, 233, 0.61);
+  width: 130px;
+  margin: 0 auto;
+  text-decoration: none;
+  text-align: center;
+}
+.second{
+  /* background-image: url("/images/large-underwater-anemonies-scott-webb.jpeg");
+  background-size: cover;
+  background-position: center; */
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+}
+.inner {
+  background-color: rgba(65, 131, 163, 0.3);
+  font-size: 19px;
+  height: 300px;
+  width: 33%;
+  border: 2px solid rgba(67, 123, 164, 0.63);
+  text-align: center;
+  margin: 10px;
+  padding: 7px;
+}
+@media only screen and (max-width:795px){
+  .inner {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width:600px){
+  .inner {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width:443px){
+  .inner {
+    font-size: 10px;
+  }
+}
+#legos, #store, #fish {
+  padding: 5px;
+  background-position: center;
+  background-size: cover;
+  height: 290px;
+  opacity: 0.7;
+}
+
+#legos > div, #store > div, #fish > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  height: 50%;
+  background-color: rgba(65, 131, 163, 0.8);
+  margin: 0 auto;
+}
+#legos {
+  background-image: url("/images/legos-iker-urteaga.jpeg");
+}
+#store {
+  background-image: url("/images/grocery-store-fikri-rasyid.jpeg");
+}
+#fish {
+  background-image: url("/images/fish-lance-anderson.jpeg");
+  transform-background-image: rotate(90deg);
+}

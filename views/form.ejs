@@ -1,0 +1,35 @@
+<% for (let i=0; i < plastics.length; i++){ %>
+<form action="/myPlastics/<%= plastics[0].id%>" method="POST">
+  <label for="userName">Name: </label>
+  <input type="text" name="userName" placeholder="Your Name" /><br/>
+
+  <label for="plastic_bottles">Plastic Bottles: </label><br/>
+  <input type="number" name="plastic_bottles" /><br/>
+
+  <label for="plastic_cups">Plastic Cups: </label><br/>
+  <input type="number" name="plastic_cups" /><br/>
+
+  <label for="straws">Straws: </label><br/>
+  <input type="number" name="straws" /><br/>
+
+  <label for="resealable_plastic_bags">Resealable Plastic Bags: </label><br/>
+  <input type="number" name="resealable_plastic_bags" /><br/>
+
+  <label for="cling_wrap">Cling Wrap: </label><br/>
+  <input type="number" name="cling_wrap" /><br/>
+
+  <label for="cutlery">Plastic Cutlery: </label><br/>
+  <input type="number" name="cutlery" /><br/>
+
+  <label for="stirrers">Stirrers: </label><br/>
+  <input type="number" name="stirrers" /><br/>
+
+  <label for="takeout_food_containers">Takeout Food Containers: </label><br/>
+  <input type="text" name="takeout_food_containers" /><br/>
+
+  <label for="grocery_bags">Plastic Grocery Bags: </label><br/>
+  <input type="text" name="grocery_bags" /><br/>
+
+  <input type="submit" value="Submit" />
+</form>
+<%}%>
