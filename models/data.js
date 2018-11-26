@@ -37,7 +37,7 @@ let topTen = [
   },
   {
     item: "Foam Take Out Containers",
-    amount: 580,570
+    amount: 580570
   }
 ]
 

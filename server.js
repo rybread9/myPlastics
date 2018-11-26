@@ -15,8 +15,7 @@ app.use(express.urlencoded({extended:true}))
 app.get('/myPlastics', (req, res)=>{
   Plastics.find({}, (error, allPlastics)=>{
     res.render('index.ejs', {
-      plastics: allPlastics,
-      topTen: 
+      plastics: allPlastics
     })
   })
 

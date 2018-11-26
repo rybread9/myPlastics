@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:300');
 @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
@@ -136,4 +137,39 @@ color: white
 #fish {
   background-image: url("/images/fish-lance-anderson.jpeg");
   transform-background-image: rotate(90deg);
+}
+/* ---------------CHART--------------- */
+.topTen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+#chart{
+  background-color: #F5F2EB;
+  border: 1px solid #CCC;
+  color: black;
+}
+.bar {
+  fill: rgb(246, 132, 26);
+  shape-rendering: crispEdges;
+}
+.bar-label {
+  text-anchor: middle;
+  fill: #000;
+  font-size: 16px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  color: black;
+  stroke: #000;
+  shape-rendering: crispEdges;
+
+}
+.gridline path,
+.gridline line {
+  fill: none;
+  stroke: #CCC;
+  shape-rendering: crispEdges;
 }

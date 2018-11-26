@@ -4,7 +4,12 @@
     <meta charset="utf-8">
     <title>myPlastics</title>
     <link rel="stylesheet" type="text/css" href="/main.css">
+    <!-- <link rel="data" type="text" href="../models/topTen.js"> -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
   </head>
   <body>
     <main>
@@ -57,9 +62,177 @@
 
       <div class="third">
         <div class="topTen">
-          
+          <!-- <svg id="chart"></svg> -->
         </div>
       </div>
     </main>
+    <script>
+
+      let topTen = [
+        {
+          item: "Cigarette Butts",
+          amount: 2412151
+        },
+        {
+          item: "Food Wrappers",
+          amount: 1739743
+        },
+        {
+          item: "Plastic Bottles",
+          amount: 1569135
+        },
+        {
+          item: "Plastic Bottle Caps",
+          amount: 1091107
+        },
+        {
+          item: "Plastic Grocery Bags",
+          amount: 757523
+        },
+        {
+          item: "Other Plastic Bags",
+          amount: 746211
+        },
+        {
+          item: "Straws & Stirrers",
+          amount: 643562
+        },
+        {
+          item: "Plastic Take Out Containers",
+          amount: 632874
+        },
+        {
+          item: "Plastic Lids",
+          amount: 624878
+        },
+        {
+          item: "Foam Take Out Containers",
+          amount: 580570
+        }
+      ];
+
+
+      // parameters of chart dimension
+      const w = 800;
+      const h = 550;
+      const margin = {
+        top: 60,
+        bottom: 110,
+        left: 60,
+        right: 40
+      }
+      // height and width of "g" element which holds bars
+      const width = w - margin.left - margin.right;
+      const height = h - margin.top - margin.bottom;
+
+
+      const x = d3.scaleBand()
+                  .domain(topTen.map(function(entry){
+                    return entry.item;
+                  }))
+                  // rangebands will create distinct values according to the distinct values in the domain
+                  .range([0,width]);
+      const y = d3.scaleLinear()
+                  .domain([0, d3.max(topTen, function(d){
+                    return d.amount
+                  })])
+                  .range([height, 0]);
+
+      // color the chart bars
+      const ordinalColorScale = d3.scaleOrdinal(d3.schemeCategory10);
+
+      // create axis for chart
+      const xAxis = d3.axisBottom()
+                      .scale(x);
+      const yAxis = d3.axisLeft()
+                      .scale(y);
+      const yGridlines = d3.axisLeft()
+                            .scale(y)
+                            .tickSize(-width, 0,0)
+                            .tickFormat("");
+      // console.log(y("Food Wrappers"));
+      // create chart with <svg> element
+      const svg = d3.select(".topTen").append("svg")
+        .attr("id", "chart")
+        .attr("width", w)
+        .attr("height", h);
+
+      // "g" element is sort of like a div. you can't see it. it holds other elements inside of it and allows you to manipulate these children elements.
+      const chart = svg.append("g")
+                        .classed("display", true)
+                        .attr("transform", "translate("+margin.left+","+margin.top+")");
+
+      function plot(params){
+        // console.log(this);
+        this.append("g")
+            .call(yGridlines)
+            .classed("gridline", true)
+            .attr("transform", "translate(0,0)")
+        // DRAW THE BARS
+        this.selectAll(".bar")
+            .data(params.topTen)
+            // enter phase: first time the topTen is bound. bind topTen to everything that follows
+            .enter()
+              // append a rectangle element for each piece of topTen
+              .append("rect")
+              .classed("bar", true)
+              .attr("x", function(d,i){
+                return x(d.item);
+              })
+              .attr("y", function(d,i){
+                return y(d.amount);
+              })
+              .attr("width", function(d,i){
+                // return x(d.item);
+                return x.bandwidth();
+              })
+              .attr("height", function(d,i){
+                // return y.bandwidth()-1;
+                return height - y(d.amount)
+              })
+              .style("fill", function(d,i){
+                return ordinalColorScale(i);
+              });
+        // LABEL THE BARS
+        this.selectAll(".bar-label")
+            .data(params.topTen)
+            .enter()
+              .append("text")
+              .classed("bar-label", true)
+              .attr("x", function(d,i){
+                return x(d.item) + (x.bandwidth()/2)
+              })
+              .attr("y", function(d,i){
+                return y(d.amount);
+              })
+              // dy allows us to "nudge" the label
+              .attr("dy", -6)
+              .attr("dx", 0)
+              .text(function(d,i){
+                return d.amount;
+              });
+
+        this.append("g")
+            .classed("x axis", true)
+            .attr("transform", "translate("+ 0 +","+ height +")")
+            .call(xAxis)
+                .selectAll("text")
+                    .style("text-anchor", "end")
+                    .attr("dx", -8)
+                    .attr("dy", 8)
+                    .attr("transform", "translate(0,0) rotate(-45)");
+
+        this.append("g")
+            .classed("y axis", true)
+            .attr("transform", "translate(0,0)")
+            .call(yAxis);
+      }
+
+      plot.call(chart, {
+        topTen: topTen
+      });
+
+
+    </script>
   </body>
 </html>
