@@ -33,7 +33,7 @@
         </div>
         <div id="problem">
           <span id="text">As inhabitants of Earth, we have a very urgent problem that desperately needs our attention. </span>
-          <a href="#" id="button">Learn More</a>
+          <a href="/myPlastics/form" id="button">Learn More</a>
         </div>
 
       </div>
@@ -65,8 +65,20 @@
           <!-- <svg id="chart"></svg> -->
         </div>
       </div>
+
+      <!-- <svg width="100" height="100">
+        <circle id="myCircle" cx="50" cy="50" r="30"></circle>
+      </svg> -->
+
     </main>
-    <script>
+    <script type="text/javascript">
+
+      // const circleDemo = d3.select("#myCircle");
+      //   circleDemo.attr("r", 40)
+      //             .style("stroke", "purple")
+      //             .style("fill", "orange");
+
+      // let topTen = require('./models/data.js');
 
       let topTen = [
         {
@@ -117,8 +129,8 @@
       const h = 550;
       const margin = {
         top: 60,
-        bottom: 110,
-        left: 60,
+        bottom: 150,
+        left: 100,
         right: 40
       }
       // height and width of "g" element which holds bars
@@ -173,7 +185,7 @@
             .data(params.topTen)
             // enter phase: first time the topTen is bound. bind topTen to everything that follows
             .enter()
-              // append a rectangle element for each piece of topTen
+              // append a rectangle element for each piece of topTen- this will be the bar
               .append("rect")
               .classed("bar", true)
               .attr("x", function(d,i){
@@ -226,6 +238,22 @@
             .classed("y axis", true)
             .attr("transform", "translate(0,0)")
             .call(yAxis);
+
+        this.select(".y.axis")
+            .append("text")
+            .attr("x", 0)
+            .attr("y", 0)
+            .style("text-anchor", "middle")
+            .attr("transform", "translate(-50,"+ height/2 +") rotate(-90)")
+            .text("Units Consumed");
+
+        this.select(".x.axis")
+            .append("text")
+            .attr("x", 0)
+            .attr("y", 0)
+            .style("text-anchor", "middle")
+            .attr("transform", "translate(" + width/2 + ",80)")
+            .text("Items Consumed")
       }
 
       plot.call(chart, {

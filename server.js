@@ -22,10 +22,21 @@ app.get('/myPlastics', (req, res)=>{
 })
 
 // create new user plastics data
-app.post('/myPlastics', (req, res)=>{
+app.post('/myPlastics/:id', (req, res)=>{
   Plastics.create(req.body, (error, createdPlastics)=>{
-    res.redirect('/myPlastics')
+    res.redirect('/myPlastics/results', {
+      plastics: plastics[req.params.id]
+    })
   })
+})
+
+app.get('/myPlastics/form', (req,res)=>{
+  Plastics.find({}, (error, allPlastics)=>{
+    res.render('form.ejs', {
+      plastics: allPlastics
+    })
+  })
+  // res.render('form.ejs')
 })
 
 // render new user plastics data in a chart

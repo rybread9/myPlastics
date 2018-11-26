@@ -97,16 +97,23 @@ color: white
   padding: 7px;
 }
 @media only screen and (max-width:795px){
+
   .inner {
     font-size: 16px;
   }
 }
 @media only screen and (max-width:600px){
+  .second{
+    flex-wrap: wrap;
+  }
   .inner {
     font-size: 12px;
   }
 }
 @media only screen and (max-width:443px){
+  .second{
+    flex-wrap: wrap;
+  }
   .inner {
     font-size: 10px;
   }
