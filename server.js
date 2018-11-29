@@ -76,7 +76,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/myPlastics'
 
-mongoose.connect(MONGODB_URI, , {useNewUrlParser:true})
+mongoose.connect(MONGODB_URI, {useNewUrlParser:true})
 mongoose.connection.once('open', ()=>{
   console.log('connected to mongo');
 })
