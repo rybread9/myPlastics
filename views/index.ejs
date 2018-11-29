@@ -9,63 +9,70 @@
 
   </head>
   <body>
-    <main>
+    <div class="main">
 
-      <div class="top">
-        <div class="nav">
-          <div class="title">
-            myPlastics
-          </div>
-          <div class="navLinks">
-            <div class="link">
-              Individual
-            </div>
-            <div class="link">
-              Community
-            </div>
-            <div class="link">
-              Solutions
-            </div>
-          </div>
-        </div>
-        <div id="problem">
-          <span id="text">As inhabitants of Earth, we have a very urgent problem that desperately needs our attention. </span>
-          <a href="/myPlastics/form" id="button">Learn More</a>
+      <% include ./partials/nav.ejs %>
+
+      <div id="water" class="top">
+
+      </div>
+
+      <div>
+        <div id="welcome">
+          <span id="text">Welcome to myPlastics,</br>
+            a mindful way to think about plastics. </span>
         </div>
       </div>
+
+      <div class="third">
+
+        <div class="chartContext">
+          <p>
+            As inhabitors of the earth, we have a very big problem. Plastic is filling up our oceans and our natural environment. By the year 2017 about 8300 million metric tons of plastics have been produced. As of 2015, about 6300 million metric tons of plastic waste has been created. <b><em>None </em></b>of the most commonly used plastics are biodegradable. Figure 1 illustrates the ten most commonly fetched types of trash per the International Coastal Cleanup 2017, an event hosted by the <a href="https://oceanconservancy.org/trash-free-seas/international-coastal-cleanup/annual-data-release/">Ocean Conservancy</a>.
+
+
+          </p>
+        </div>
+
+
+        <div class="topTen">
+
+        </div>
+
+      </div>
+
+      <a href="/myPlastics/form" id="button">Take Action</a>
 
       <div class="second">
         <div class="inner">
             <div id="legos">
-              <div>Around the year 1950, plastic became popular. This exciting new material was durable and cheaply made, allowing its use to become wide-spread.</div>
+              <div class="innertext">Around the year 1950, plastic became popular. This exciting new material was durable and cheaply made, allowing its use to become wide-spread.</div>
             </div>
 
         </div>
 
         <div class="inner">
           <div id="store">
-            <div>Now, the most common use for plastic is single-use packaging.  </div>
+            <div class="innertext">Now, the most common use for plastic is single-use packaging.  </div>
           </div>
 
         </div>
 
         <div class="inner">
           <div id="fish">
-            <div>Plastic is filling up our oceans and our natural environment. It is estimated that by the year 2050, there will be more plastic in our ocean than fish.</div>
+            <div class="innertext">Plastic is filling up our oceans and our natural environment. It is estimated that by the year 2050, there will be more plastic in our ocean than fish.</div>
           </div>
-
         </div>
+
+
       </div>
 
-      <div class="third">
-        <div class="topTen">
+      <% include ./partials/footer.ejs %>
 
-        </div>
       </div>
 
 
-
-    </main>
+    </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/d3-color.v1.min.js"></script>
     <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>

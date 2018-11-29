@@ -4,18 +4,16 @@
 
 // arr = [5,4,10,3,7,9,2,8,6,1,13,1,17];
 
-const w = 400;
-const h = 300;
-const barPadding = 1;
-//  scale the height of the bars based on the height of our SVG and the maximum value from our data
-
-
-
-const svg = d3.select(".userChart")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h)
-              .style("background-color", "white");
+let w;
+let h;
+let barPadding = 1;
+let margin = {};
+let width;
+let height;
+let svg = {};
+let maxHeight;
+let maxColor;
+let minColor;
 
 
 
@@ -23,11 +21,33 @@ const svg = d3.select(".userChart")
 
 const drawGraph = function(arr){
 
-  const maxHeight = h/Math.max(...arr);
-  const maxColor = 255/Math.max(...arr);
-  const minColor = 255/Math.min(...arr);
+  w = 500;
+  h = 500;
+  margin = {
+    top: 30,
+    bottom: 120,
+    left: 60,
+    right: 20
+  }
 
-  console.log("I am making a graph :) ");
+  // height and width of "g" element which holds bars
+  width = w - margin.left - margin.right;
+  height = h - margin.top - margin.bottom;
+
+
+  maxHeight = h/Math.max(...arr);
+  maxColor = 255/Math.max(...arr);
+  minColor = 255/Math.min(...arr);
+
+  svg = d3.select(".userChart")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .style("background-color", "white")
+                .append("g")
+                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");;
+
+
 
   svg.selectAll("rect")
       .data(arr)
@@ -35,18 +55,19 @@ const drawGraph = function(arr){
       .append("rect")
       // evenly spaced bars: divide the width of the svg by the length of the array, then subtract the bar padding. then multiply by i which will input the index of the piece of data being processed.
       .attr("x", function(d,i){
-        return i * ( w / arr.length - barPadding );
+        return i * ( width / arr.length - barPadding );
       })
       // height of bars... depends on data
       .attr("y", function(d){
-        return h-d*maxHeight;
+        return height-d*maxHeight;
       })
       .attr("width", 20)
-      // height of bars... depends on data
+      // //  scale the height of the bars based on the height of our SVG and the maximum value from our data
       .attr("height", function(d){
         return d * maxHeight;
       })
       .attr("fill", function(d){
+
         return "rgb(0,0," + (Math.round(d * maxColor)) + ")";
       });
 

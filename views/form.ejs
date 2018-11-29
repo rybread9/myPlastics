@@ -12,44 +12,79 @@
   </head>
   <body>
 
-    <h2>The first step toward a cleaner planet is personal accountability.</h2>
-    <p>Every person on earth needs to make more conscious decisions regarding the amount of waste they produce. As a starting point, lets estimate the amount of plastic items you use every day and see what you accumulate after one year. You will be amazed at how quickly the plastics pile up! </p>
+    <div class="main">
 
-    <h4>Fill out the form below to get started on your journey to a cleaner planet! Once you are aware of the numbers, you will be able to take small steps to reduce your waste.</h4>
+      <div class="header">
+        <% include ./partials/nav.ejs %>
 
-    <form action="/myPlastics/form %>" method="POST">
-      <label for="userName">Name: </label>
-      <input type="text" name="userName" placeholder="Your Name" /><br/>
+        <div id="trash" class="top"></div>
+      </div>
 
-      <label for="plastic_bottles">Plastic Bottles: </label><br/>
-      <input type="number" name="plastic_bottles" /><br/>
 
-      <label for="plastic_cups">Plastic Cups: </label><br/>
-      <input type="number" name="plastic_cups" /><br/>
 
-      <label for="straws">Straws: </label><br/>
-      <input type="number" name="straws" /><br/>
+      <div class="container">
+        <div id="firststep">
+          <h2>The first step toward a cleaner planet </br> is personal accountability.</h2>
 
-      <label for="resealable_plastic_bags">Resealable Plastic Bags: </label><br/>
-      <input type="number" name="resealable_plastic_bags" /><br/>
+          <div id="theNeed">
+            <p>Every person on earth is affected by the waste that ends up in landfills and the natural environment. A clean environment means cleaner air and water for our communities. As a starting point, lets estimate the amount of plastic items you use every week and see what you accumulate after one year. You will be amazed at how quickly the plastics pile up!</p>
 
-      <label for="cling_wrap">Cling Wrap: </label><br/>
-      <input type="number" name="cling_wrap" /><br/>
+            <p>Fill out the form below to get started on your journey to a cleaner planet! Once you are aware of the numbers, you will be able to take small steps to reduce your waste.</p>
+          </div>
+        </div>
 
-      <label for="cutlery">Plastic Cutlery: </label><br/>
-      <input type="number" name="cutlery" /><br/>
+        <div class="mainContent">
 
-      <label for="stirrers">Stirrers: </label><br/>
-      <input type="number" name="stirrers" /><br/>
+          <div class="form">
+            <form action="/myPlastics/form %>" method="POST">
+              <label for="userName">Name: </label>
+              <input type="text" name="userName" placeholder="Your Name" /><br/>
 
-      <label for="takeout_food_containers">Takeout Food Containers: </label><br/>
-      <input type="text" name="takeout_food_containers" /><br/>
+              <label for="plastic_bottles">Plastic Bottles: </label><br/>
+              <input type="number" name="plastic_bottles" /><br/>
 
-      <label for="grocery_bags">Plastic Grocery Bags: </label><br/>
-      <input type="text" name="grocery_bags" /><br/>
+              <label for="plastic_cups">Plastic Cups: </label><br/>
+              <input type="number" name="plastic_cups" /><br/>
 
-      <input type="submit" value="Submit" />
-    </form>
+              <label for="straws">Straws: </label><br/>
+              <input type="number" name="straws" /><br/>
+
+              <label for="resealable_plastic_bags">Resealable Plastic Bags: </label><br/>
+              <input type="number" name="resealable_plastic_bags" /><br/>
+
+              <label for="cling_wrap">Cling Wrap: </label><br/>
+              <input type="number" name="cling_wrap" /><br/>
+
+              <label for="cutlery">Plastic Cutlery: </label><br/>
+              <input type="number" name="cutlery" /><br/>
+
+              <label for="stirrers">Stirrers: </label><br/>
+              <input type="number" name="stirrers" /><br/>
+
+              <label for="takeout_food_containers">Takeout Food Containers: </label><br/>
+              <input type="text" name="takeout_food_containers" /><br/>
+
+              <label for="grocery_bags">Plastic Grocery Bags: </label><br/>
+              <input type="text" name="grocery_bags" /><br/>
+
+              <input class="submit" type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+      <% include ./partials/footer.ejs %>
+
+    </div>
+
+
+
+
+
+
+
+
     <!-- <a href="/myPlastics/<%= plastics[plastics.length - 1].id%>" style="color: white;">View Results</a> -->
   </body>
 </html>

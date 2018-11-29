@@ -10,49 +10,86 @@
   </head>
   <body>
 
-    <div class="userChart">
+    <div class="main">
+
+      <div class="header">
+        <% include ./partials/nav.ejs %>
+
+        <div id="jellyfish" class="top">
+
+        </div>
+      </div>
+
+
+      <div class="container">
+
+
+
+        <div class="graph">
+          <div>
+            <h2><%= plastics.userName %>'s Plastic Footprint for One Year</h2>
+          </div>
+          <div class="userChart">
+
+          </div>
+        </div>
+
+        <div id="results">
+          <h2><%= plastics.userName %>, your total plastic item count for one year is
+
+          <%= 52 * (plastics.plastic_bottles + plastics.plastic_cups + plastics.straws + plastics.resealable_plastic_bags + plastics.cling_wrap + plastics.cutlery + plastics.stirrers + plastics.takeout_food_containers + plastics.grocery_bags) %> items.</h2>
+
+          
+        </div>
+      </div>
+
+
+
+
+
+
+      <div style="display:none;"   class="data">
+        <p  id="userId">
+          <%= plastics._id%>
+        </p>
+
+        <p>
+          <%= plastics.userName%>
+        </p>
+        <p class="results">
+          <%= plastics.plastic_bottles * 52%>
+        </p>
+        <p class="results">
+          <%= plastics.plastic_cups  * 52%>
+        </p>
+        <p class="results">
+          <%= plastics.straws  * 52%>
+        </p>
+        <p class="results">
+          <%= plastics.resealable_plastic_bags * 52%>
+        </p>
+        <p class="results">
+          <%= plastics.cling_wrap * 52%>
+        </p>
+        <p class="results">
+          <%= plastics.cutlery * 52%>
+        </p>
+        <p class="results">
+          <%= plastics.stirrers * 52%>
+        </p>
+        <p class="results">
+          <%=  plastics.takeout_food_containers * 52%>
+        </p>
+        <p class="results">
+          <%= plastics.grocery_bags * 52%>
+        </p>
+      </div>
+
+      <% include ./partials/footer.ejs %>
+
+
 
     </div>
-
-    <div   class="data">
-      <p  id="userId">
-        <%= plastics._id%>
-      </p>
-
-      <p>
-        <%= plastics.userName%>
-      </p>
-      <p class="results">
-        <%= plastics.plastic_bottles * 365%>
-      </p>
-      <p class="results">
-        <%= plastics.plastic_cups  * 365%>
-      </p>
-      <p class="results">
-        <%= plastics.straws  * 365%>
-      </p>
-      <p class="results">
-        <%= plastics.resealable_plastic_bags * 365%>
-      </p>
-      <p class="results">
-        <%= plastics.cling_wrap * 365%>
-      </p>
-      <p class="results">
-        <%= plastics.cutlery * 365%>
-      </p>
-      <p class="results">
-        <%= plastics.stirrers * 365%>
-      </p>
-      <p class="results">
-        <%=  plastics.takeout_food_containers * 365%>
-      </p>
-      <p class="results">
-        <%= plastics.grocery_bags * 365%>
-      </p>
-    </div>
-
-
-
 
 
 

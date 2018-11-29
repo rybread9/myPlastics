@@ -9,17 +9,18 @@
     let svg = {};
     let height;
     let width;
+    let margin;
 
 
       const drawChart = (topTen) => {
         // parameters of chart dimension
-        const w = 800;
-        const h = 550;
+        const w = 500;
+        const h = 350;
         const margin = {
-          top: 60,
-          bottom: 150,
-          left: 100,
-          right: 40
+          top: 30,
+          bottom: 120,
+          left: 60,
+          right: 20
         }
         // height and width of "g" element which holds bars
         width = w - margin.left - margin.right;
@@ -104,7 +105,7 @@
               .append("text")
               .classed("bar-label", true)
               .attr("x", function(d,i){
-                return x(d.item) + (x.bandwidth()/2)
+                return x(d.item) + (x.bandwidth()/2);
               })
               .attr("y", function(d,i){
                 return y(d.amount);

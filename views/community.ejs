@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>myPlastics</title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+
+    <script src="js/topTen.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <div class="main">
+
+      <div class="header">
+        <% include ./partials/nav.ejs %>
+
+        <div id="community" class="top">
+
+        </div>
+
+      </div>
+
+      <div class="container">
+
+        <div class="leaderboard">
+          <div class="table">
+            <h2>Leader Boards</h2>
+            <table>
+              <tr>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Date
+                </th>
+                <th>
+                  Waste Total
+                </th>
+              </tr>
+              <% for (let i=0; i< plastics.length; i++) {%>
+                <!-- click on name takes to results page with chart -->
+
+                <tr>
+                  <td>
+                    <a href="/myPlastics/<%= plastics[i].id %>">
+                      <%= plastics[i].userName %>
+                    </a>
+                  </td>
+                  <td>
+                    <a href="/myPlastics/<%= plastics[i].id %>">
+                      <%= plastics[i].date %>
+                    </a>
+                  </td>
+                  <td>
+                    <a href="/myPlastics/<%= plastics[i].id %>">
+
+
+                      <%= 52 * (plastics[i].plastic_bottles + plastics[i].plastic_cups + plastics[i].straws + plastics[i].resealable_plastic_bags + plastics[i].cling_wrap + plastics[i].cutlery + plastics[i].stirrers + plastics[i].takeout_food_containers + plastics[i].grocery_bags) %>
+                    </a>
+                  </td>
+                </tr>
+
+              <%}%>
+            </table>
+          </div>
+
+          <div class="">
+
+          </div>
+        </div>
+
+
+
+        <% include ./partials/footer.ejs %>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </body>
+</html>

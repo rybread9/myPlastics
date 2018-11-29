@@ -16,6 +16,15 @@ app.get('/myPlastics', (req, res)=>{
     res.render('index.ejs')
 })
 
+// community list page
+app.get('/myPlastics/community', (req,res)=>{
+  Plastics.find({}, (error, allPlastics)=>{
+    res.render('community.ejs', {
+      plastics: allPlastics
+    })
+  })
+})
+
 
 app.get('/plastics', (req, res)=>{
   res.json(Plastics)
