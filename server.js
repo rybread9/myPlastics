@@ -13,27 +13,36 @@ app.use(express.urlencoded({extended:true}))
 
 // index page
 app.get('/myPlastics', (req, res)=>{
-  Plastics.find({}, (error, allPlastics)=>{
-    res.render('index.ejs', {
-      plastics: allPlastics
-    })
-  })
+    res.render('index.ejs')
+})
 
+
+app.get('/plastics', (req, res)=>{
+  res.json(Plastics)
+})
+
+// get topTen chart data
+app.get('/topTen', (req,res)=>{
+    res.json(topTen)
 })
 
 // create new user plastics data
-app.post('/myPlastics/:id', (req, res)=>{
+app.post('/myPlastics/form', (req, res)=>{
   Plastics.create(req.body, (error, createdPlastics)=>{
-    res.redirect('/myPlastics/results', {
-      plastics: plastics[req.params.id]
-    })
+    // res.redirect('results.ejs', {
+    //   plastics: createdPlastics
+
+    // })
+    // console.log(createdPlastics);
+  res.redirect('/myPlastics/' + createdPlastics._id)
   })
 })
 
+// get the user input page
 app.get('/myPlastics/form', (req,res)=>{
-  Plastics.find({}, (error, allPlastics)=>{
+  Plastics.find({}, (error, userPlastics)=>{
     res.render('form.ejs', {
-      plastics: allPlastics
+      plastics: userPlastics
     })
   })
   // res.render('form.ejs')
@@ -42,11 +51,23 @@ app.get('/myPlastics/form', (req,res)=>{
 // render new user plastics data in a chart
 app.get('/myPlastics/:id', (req, res)=>{
   Plastics.findById(req.params.id, (err, foundPlastics)=>{
+    // console.log(foundPlastics);
+    if (err) {
+      console.log(err);
+    }
     res.render('results.ejs', {
       plastics: foundPlastics
     })
   })
 })
+
+
+// app.get('/plasticsJson/:id', (req, res)=>{
+//   Plastics.findById(req.params.id, (err, foundPlastics)=>{
+//     console.log(foundPlastics);
+//     res.json(foundPlastics)
+//   })
+// })
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));

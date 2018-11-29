@@ -11,7 +11,13 @@
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
   </head>
   <body>
-    <form action="/myPlastics/<%= plastics[plastics.length-1].id %>" method="POST">
+
+    <h2>The first step toward a cleaner planet is personal accountability.</h2>
+    <p>Every person on earth needs to make more conscious decisions regarding the amount of waste they produce. As a starting point, lets estimate the amount of plastic items you use every day and see what you accumulate after one year. You will be amazed at how quickly the plastics pile up! </p>
+
+    <h4>Fill out the form below to get started on your journey to a cleaner planet! Once you are aware of the numbers, you will be able to take small steps to reduce your waste.</h4>
+
+    <form action="/myPlastics/form %>" method="POST">
       <label for="userName">Name: </label>
       <input type="text" name="userName" placeholder="Your Name" /><br/>
 
@@ -44,5 +50,6 @@
 
       <input type="submit" value="Submit" />
     </form>
+    <!-- <a href="/myPlastics/<%= plastics[plastics.length - 1].id%>" style="color: white;">View Results</a> -->
   </body>
 </html>
