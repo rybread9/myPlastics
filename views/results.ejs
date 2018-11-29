@@ -16,7 +16,9 @@
         <% include ./partials/nav.ejs %>
 
         <div id="jellyfish" class="top">
-
+          <div class="heading">
+            <h1>SOLUTIONS</h1>
+          </div>
         </div>
       </div>
 
@@ -24,23 +26,72 @@
       <div class="container">
 
 
+        <div class="userResults">
+          <div id="graph">
+            <div>
+              <h2><%= plastics.userName %>'s Plastic Footprint for One Year</h2>
+            </div>
+            <div class="userChart">
 
-        <div class="graph">
-          <div>
-            <h2><%= plastics.userName %>'s Plastic Footprint for One Year</h2>
+            </div>
           </div>
-          <div class="userChart">
+
+          <div id="results">
+            <h2><%= plastics.userName %>, your total plastic item count for one year is <br/>
+
+            <span id="total"><%= 52 * (plastics.plastic_bottles + plastics.plastic_cups + plastics.straws + plastics.resealable_plastic_bags + plastics.cling_wrap + plastics.cutlery + plastics.stirrers + plastics.takeout_food_containers + plastics.grocery_bags) %> items.</span></h2>
+
+            <p>
+              A peer-reviewed <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5517107/">study from 2017</a> that was published in <a href="http://advances.sciencemag.org/">Science Advances</a> Journal indicates that of the total plastics that are produced and consumed:
+            </p>
+
+            <ul>
+              <li>only <span class="num">9%</span> is recycled,</li>
+              <li><span class="num">12%</span> is burned- which is toxic for the air we breathe,</li>
+              <li> and a shocking <span class="num">79%</span> accumulates in landfills or the natural environment.</li>
+            </ul>
+
+            <p>
+              These numbers can be overwhelming, but don't worry! We can be on our way to improving these standards with just a few habitual changes.
+              If you would like to find out how you can make a positive impact on the environment, please read below!
+            </p>
 
           </div>
         </div>
 
-        <div id="results">
-          <h2><%= plastics.userName %>, your total plastic item count for one year is
-
-          <%= 52 * (plastics.plastic_bottles + plastics.plastic_cups + plastics.straws + plastics.resealable_plastic_bags + plastics.cling_wrap + plastics.cutlery + plastics.stirrers + plastics.takeout_food_containers + plastics.grocery_bags) %> items.</h2>
-
-          
+        <div class="solutions">
+          <div class="habit">
+            <h2>Header</h2>
+            <img src="" alt="">
+            <span>solution text here.</span>
+          </div>
+          <div class="habit">
+            <h2>Header</h2>
+            <img src="" alt="">
+            <span>solution text here.</span>
+          </div>
+          <div class="habit">
+            <h2>Header</h2>
+            <img src="" alt="">
+            <span>solution text here.</span>
+          </div>
+          <div class="habit">
+            <h2>Header</h2>
+            <img src="" alt="">
+            <span>solution text here.</span>
+          </div>
+          <div class="habit">
+            <h2>Header</h2>
+            <img src="" alt="">
+            <span>solution text here.</span>
+          </div>
+          <div class="habit">
+            <h2>Header</h2>
+            <img src="" alt="">
+            <span>solution text here.</span>
+          </div>
         </div>
+
       </div>
 
 

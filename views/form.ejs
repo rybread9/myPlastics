@@ -5,10 +5,16 @@
     <title>myPlastics</title>
     <link rel="stylesheet" type="text/css" href="/main.css">
     <!-- <link rel="data" type="text" href="../models/topTen.js"> -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="../js/form.js" charset="utf-8"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/d3-color.v1.min.js"></script>
     <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
   </head>
   <body>
 
@@ -17,7 +23,11 @@
       <div class="header">
         <% include ./partials/nav.ejs %>
 
-        <div id="trash" class="top"></div>
+        <div id="trash" class="top">
+          <div class="heading">
+            <h1>AWARENESS</h1>
+          </div>
+        </div>
       </div>
 
 
@@ -31,11 +41,18 @@
 
             <p>Fill out the form below to get started on your journey to a cleaner planet! Once you are aware of the numbers, you will be able to take small steps to reduce your waste.</p>
           </div>
+
+          <a id="calc" href="#">Waste Calculator</a>
         </div>
 
-        <div class="mainContent">
+        <div id="modal" class="mainContent">
 
-          <div class="form">
+          <div id="modal-textbox" class="form">
+
+            <a href="#" id="close">x Close</a>
+
+            <h2>Personal Plastic Use</h2>
+
             <form action="/myPlastics/form %>" method="POST">
               <label for="userName">Name: </label>
               <input type="text" name="userName" placeholder="Your Name" /><br/>
@@ -62,13 +79,14 @@
               <input type="number" name="stirrers" /><br/>
 
               <label for="takeout_food_containers">Takeout Food Containers: </label><br/>
-              <input type="text" name="takeout_food_containers" /><br/>
+              <input type="number" name="takeout_food_containers" /><br/>
 
               <label for="grocery_bags">Plastic Grocery Bags: </label><br/>
-              <input type="text" name="grocery_bags" /><br/>
+              <input type="number" name="grocery_bags" /><br/>
 
               <input class="submit" type="submit" value="Submit" />
             </form>
+
           </div>
         </div>
 
@@ -77,13 +95,6 @@
       <% include ./partials/footer.ejs %>
 
     </div>
-
-
-
-
-
-
-
 
   </body>
 </html>

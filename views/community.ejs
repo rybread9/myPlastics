@@ -11,10 +11,13 @@
 
     <div class="main">
 
-      <div class="header">
+      <div>
         <% include ./partials/nav.ejs %>
 
         <div id="community" class="top">
+          <div class="heading">
+            <h1>COMMUNITY</h1>
+          </div>
 
         </div>
 
@@ -24,15 +27,13 @@
 
         <div class="leaderboard">
           <div class="table">
-            <h2>Leader Boards</h2>
+            <h2>Community Totals</h2>
             <table>
               <tr>
                 <th>
                   Name
                 </th>
-                <th>
-                  Date
-                </th>
+
                 <th>
                   Waste Total
                 </th>
@@ -46,11 +47,7 @@
                       <%= plastics[i].userName %>
                     </a>
                   </td>
-                  <td>
-                    <a href="/myPlastics/<%= plastics[i].id %>">
-                      <%= plastics[i].date %>
-                    </a>
-                  </td>
+
                   <td>
                     <a href="/myPlastics/<%= plastics[i].id %>">
 

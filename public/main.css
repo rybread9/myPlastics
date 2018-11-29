@@ -1,12 +1,14 @@
 
-@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:300');
-@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
-
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
 body {
-font-family: 'Bai Jamjuree', sans-serif;  font-weight: 100;
+font-family: 'Raleway', sans-serif;
+font-weight: 100;
 background-color: rgb(16, 77, 107);
 color: white;
+margin: 0;
 }
 
 .main {
@@ -14,9 +16,9 @@ color: white;
   flex-direction: column;
   justify-content: center;
 }
-#water {
-  background-image: url("/images/ocean-top-matt-hardy.jpeg");
-  /* background-color: rgb(46, 50, 103); */
+a {
+  color: white;
+  text-decoration: underline;
 }
 
 /* ---------NAV BAR-------- */
@@ -25,40 +27,67 @@ color: white;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
-  border-bottom: 2px solid ghostwhite;
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 4px;
   color: white;
-  height: 55px;
-  margin-bottom:15px;
+  height: 60px;
 }
 .navLinks {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 22px;
 }
 .link {
   margin-left: 30px;
   margin-right: 30px;
   font-weight: 100;
+  font-size: 25px;
+}
+.link >div>a{
+  text-decoration: none;
+
+}
+.link>div>a:hover{
+  color: rgb(226, 140, 61);
 }
 .title {
   font-size: 48px;
-  margin-left: 20px;
+  margin-left: 15px;
+}
+.title > a > img {
+  margin-top: -71px;
 }
 .top {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 400px;
-  color: ghostwhite;
+  height: 450px;
+  color: white;
   font-family: sans-serif;
   font-size: 26px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 60px;
+  justify-content: center;
+  /* padding-bottom: 60px; */
   overflow: hidden;
+}
+#tagline {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 370px;
+  margin-right: 20px;
+}
+#tagline>h1{
+  font-weight: 200;
+  font-size: 30px;
+
+}
+#water {
+  background-image: url("/images/ocean-top-matt-hardy.jpeg");
+  /* background-color: rgb(46, 50, 103); */
 }
 #welcome {
   display: flex;
@@ -75,21 +104,26 @@ color: white;
   margin-bottom: 30px;
 
 }
-#button {
+#button, #calc, #close {
   color: rgb(27, 40, 107);
   background-color: rgb(226, 140, 61);
-  font-family: 'Shadows Into Light', cursive;
   border: 1px solid rgba(128, 202, 233, 0.61);
+  font-weight: bold;
   font-size: 20px;
   width: 130px;
   margin: 0 auto;
+  /* margin-top: 50px; */
   text-decoration: none;
   text-align: center;
   letter-spacing: 3px;
+  padding: 10px;
+  margin-left: 500px;
 }
-#button:hover{
+#button:hover,
+#calc:hover,
+#close:hover{
   color: white;
-  background-color: rgba(27, 40, 107, 0.43);
+  background-color: rgba(27, 40, 107, 0.92);
 }
 .second, .third{
   /* background-image: url("/images/large-underwater-anemonies-scott-webb.jpeg");
@@ -100,6 +134,13 @@ color: white;
   flex-direction: row;
   justify-content: center;
   margin-top: 30px;
+
+}
+.third {
+  background-color: black;
+  width: 100%;
+  height: 450px;
+  padding-top: 50px;
 }
 .inner, .chartContext {
   background-color: rgba(65, 131, 163, 0.3);
@@ -112,11 +153,11 @@ color: white;
   padding: 7px;
 }
 .chartContext{
-  height: 350px;
+  height: 450px;
   width: 30%;
   font-size: 20px;
   margin-right: 40px;
-  margin-top: -10px;
+  margin-top: -30px;
 }
 .innertext {
   opacity: 1;
@@ -187,6 +228,9 @@ color: white;
   background-color: #F5F2EB;
   border: 1px solid #CCC;
   color: black;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: -30px;
 }
 .bar {
   fill: rgb(246, 132, 26);
@@ -195,7 +239,8 @@ color: white;
 .bar-label {
   text-anchor: middle;
   fill: #000;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .axis path,
 .axis line {
@@ -203,7 +248,8 @@ color: white;
   color: black;
   stroke: #000;
   shape-rendering: crispEdges;
-
+  font-weight: bold;
+  font-size: 12px;
 }
 .gridline path,
 .gridline line {
@@ -213,7 +259,7 @@ color: white;
 }
 
 /* ---------FORM PAGE-------- */
-.container, .mainContent, #firststep, .form, .graph  {
+.container, .mainContent, #firststep, .form,   {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -221,16 +267,22 @@ color: white;
 }
 #trash {
   background-image: url("/images/beach-plastic-john-cameron.jpeg");
+
 }
-#firststep, #results {
-  /* margin-top: 20px; */
-  height: 500px;
+#trash>div, #jellyfish>div{
+  color:white;
+  border: 15px solid white;
+}
+#firststep {
+  padding-top: 20px;
+  height: 450px;
   width: 100%;
   background-color: white;
-  color: rgb(16, 77, 107)
+  color: rgb(16, 77, 107);
 }
-#firststep > h2, #results > h2 {
+#firststep > h2 {
   font-size: 35px;
+  text-align: center;
 }
 #theNeed{
   font-size: 25px;
@@ -277,22 +329,89 @@ textarea {
   margin: 25px;
 
 }
+#modal {
+	background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	overflow: scroll;
+	display: none;
+}
+#modal-textbox {
+  background-color: rgb(16, 77, 107);
+  border: 1px solid rgb(0, 217, 255);
+	height: 500px;
+	width: 550px;
+	border-radius: 7px;
+	margin: 0 auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	padding: 5%;
+  overflow: scroll;
+  text-align: center;
+  line-height: 20px;
+  /* padding-top: 30px; */
+}
+#modal-textbox>h2{
+
+}
+#close {
+  letter-spacing: 3px;
+  padding: 10px;
+  height: 23px;
+  margin-top: -45px;
+  margin-left: -50px;
+  float: left;
+}
 /* --------RESULTS PAGE--------- */
 
 #jellyfish{
   background-image: url("/images/jellyfish-sasha-stories.jpeg");
 }
-.graph{
-  margin: 20px;
+.userResults {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
-#results{
-  margin: 30px 0;
+#graph, #results{
+  width: 40%;
+  margin: 30px;
 }
 
+
+.solutions {
+  background-color: black;
+}
+#results > p, li {
+  font-size:20px;
+}
+.num, #total {
+  font-weight: bold;
+  color: orange;
+  font-size: 25px;
+}
+#total {
+  font-size: 40px;
+  margin-left: 110px;
+}
 /* -------COMMUNITY PAGE------ */
 #community{
-  background-image: url("/images/carrying-baskets-aaron-thomas.jpeg");
+  background-image: url("/images/community-rawpixel.jpeg");
 
+}
+.heading {
+  border: 15px solid black;
+  text-align: center;
+  padding: 0px 20px;
+  margin-top:200px;
+  width: 30%;
+  margin: 0 auto;
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
 }
 .leaderboard{
   width: 100%;
@@ -306,7 +425,6 @@ textarea {
   width: 30%;
 }
 .table > h2 {
-  font-family: 'Shadows Into Light', cursive;
   letter-spacing: 3px;
   font-size: 35px;
   text-align: center;
@@ -326,10 +444,7 @@ td {
 td:hover{
   text-decoration: underline;
 }
-a {
-  color: white;
-  text-decoration: none;
-}
+
 
 /* -------FOOTER------ */
 
@@ -341,6 +456,8 @@ a {
   text-align: center;
   border-top: 2px solid rgba(67, 123, 164, 0.63);
 }
-.footer > a {
+.footer > p > a {
+  font-weight: bold;
+  font-size: 18px;
   text-decoration: underline;
 }

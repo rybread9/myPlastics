@@ -14,8 +14,8 @@
 
       const drawChart = (topTen) => {
         // parameters of chart dimension
-        const w = 500;
-        const h = 350;
+        const w = 600;
+        const h = 450;
         const margin = {
           top: 30,
           bottom: 120,
