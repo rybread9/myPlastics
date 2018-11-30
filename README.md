@@ -1,5 +1,6 @@
 # myPlastics
 ![myPlastics logo](/public/images/myplastics_logo_screenshot.png)
+
 myPlastics was built for our planet. It is meant to encourage users to make conscious decisions regarding their consumption of plastic materials.
 
 ## Technology Used
