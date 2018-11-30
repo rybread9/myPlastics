@@ -1,5 +1,5 @@
 # myPlastics
-![myPlastics logo](/images/myplastics_logo_screenshot.png)
+![myPlastics logo](/public/images/myplastics_logo_screenshot.png)
 myPlastics was built for our planet. It is meant to encourage users to make conscious decisions regarding their consumption of plastic materials.
 
 ## Technology Used
@@ -10,7 +10,7 @@ myPlastics was built for our planet. It is meant to encourage users to make cons
 * D3
 * jQuery
 
-![myPlastics chart](/images/myPlastics_topTen_sh.png)
+![myPlastics chart](/public/images/myPlastics_topTen_sh.png)
 
 ## User Stories
 * Users can input their own plastic usage.
