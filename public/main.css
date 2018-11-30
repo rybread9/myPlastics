@@ -467,9 +467,13 @@ textarea {
   text-align: center;
 
 }
-.leaderboard{
+.community{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
   background-color: black;
+  padding: 10px;
 }
 .table {
   display: flex;
@@ -477,6 +481,7 @@ textarea {
   justify-content: center;
   margin: 30px 20px;
   width: 30%;
+  border: 1px solid white;
 }
 .table > h2 {
   letter-spacing: 3px;
