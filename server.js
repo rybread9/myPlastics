@@ -26,9 +26,9 @@ app.get('/myPlastics/community', (req,res)=>{
 })
 
 
-app.get('/plastics', (req, res)=>{
-  res.json(Plastics)
-})
+// app.get('/plastics', (req, res)=>{
+//   res.json(Plastics)
+// })
 
 // get topTen chart data
 app.get('/topTen', (req,res)=>{

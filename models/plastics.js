@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const plasticsSchema = new mongoose.Schema({
   userName: { type: String, required: true },
-  date: {type: Date, default: Date.new },
   plastic_bottles: { type: Number, required: true},
   plastic_cups: { type: Number, required: true },
   straws: { type: Number, required: true },
@@ -11,8 +10,7 @@ const plasticsSchema = new mongoose.Schema({
   cutlery: { type: Number, required: true },
   stirrers: { type: Number, required: true },
   takeout_food_containers: { type: Number, required: true },
-  grocery_bags: { type: Number, required: true },
-  total: Number
+  grocery_bags: { type: Number, required: true }
 })
 
 const Plastics = mongoose.model('Plastics', plasticsSchema)

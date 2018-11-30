@@ -104,20 +104,31 @@ a {
   margin-bottom: 30px;
 
 }
-#button, #calc, #close {
+#calc, #close {
   color: rgb(27, 40, 107);
   background-color: rgb(226, 140, 61);
-  border: 1px solid rgba(128, 202, 233, 0.61);
+  border: 1px solid rgb(27, 40, 107);
   font-weight: bold;
   font-size: 20px;
   width: 130px;
   margin: 0 auto;
-  /* margin-top: 50px; */
   text-decoration: none;
   text-align: center;
   letter-spacing: 3px;
   padding: 10px;
   margin-left: 500px;
+}
+#button{
+  color: rgb(27, 40, 107);
+  background-color: rgb(226, 140, 61);
+  border: 1px solid rgb(27, 40, 107);
+  font-weight: bold;
+  font-size: 20px;
+  width: 130px;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 3px;
+  padding: 10px;
 }
 #button:hover,
 #calc:hover,
@@ -158,6 +169,23 @@ a {
   font-size: 20px;
   margin-right: 40px;
   margin-top: -30px;
+}
+
+.userChart{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 90px;
+  padding-bottom: 30px;
+  height: 600px;
+  width: 600px;
+  background-color: black;
+  /* box-shadow: 5px 5px 10px rgb(68, 65, 103); */
+}
+
+svg{
+  padding-top: 20px;
+  padding-left: 20px;
 }
 .innertext {
   opacity: 1;
@@ -354,9 +382,7 @@ textarea {
   line-height: 20px;
   /* padding-top: 30px; */
 }
-#modal-textbox>h2{
 
-}
 #close {
   letter-spacing: 3px;
   padding: 10px;
@@ -373,30 +399,57 @@ textarea {
 .userResults {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
 }
 #graph, #results{
   width: 40%;
   margin: 30px;
 }
-
-
-.solutions {
-  background-color: black;
+.userResults>div>div>h2{
+  text-align: center;
 }
+
+
 #results > p, li {
-  font-size:20px;
+  font-size:22px;
 }
 .num, #total {
   font-weight: bold;
   color: orange;
-  font-size: 25px;
+  font-size: 28px;
 }
 #total {
   font-size: 40px;
   margin-left: 110px;
 }
+.solutions {
+  display: inline-block;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-left: 200px;
+  padding-right: 200px;
+  background-color: black;
+  height: 500px;
+  overflow: scroll;
+}
+.habit {
+  text-align: center;
+  height: 180px;
+  width: 25%;
+  margin: 50px;
+}
+.habit>img{
+  height:160px;
+  width: 90%;
+}
+/* .one {
+  align-self: flex-start;
+}
+.two {
+  align-self: baseline;
+
+} */
 /* -------COMMUNITY PAGE------ */
 #community{
   background-image: url("/images/community-rawpixel.jpeg");
@@ -404,14 +457,15 @@ textarea {
 }
 .heading {
   border: 15px solid black;
-  text-align: center;
   padding: 0px 20px;
   margin-top:200px;
   width: 30%;
   margin: 0 auto;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
   color: black;
+  text-align: center;
+
 }
 .leaderboard{
   width: 100%;
