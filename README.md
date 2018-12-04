@@ -1,7 +1,7 @@
 # myPlastics
 ![myPlastics logo](/public/images/myplastics_logo_screenshot.png)
 
-myPlastics was built for our planet. It is meant to encourage users to make conscious decisions regarding their consumption of plastic materials.
+myPlastics was built for our planet. It is meant to encourage users to make conscious decisions regarding their consumption of plastic materials. Check it out [here](https://lit-sea-30634.herokuapp.com/myPlastics)!
 
 ## Technology Used
 * Mongoose
